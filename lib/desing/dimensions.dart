@@ -19,3 +19,7 @@ const double el006 = 0.06;
 
 /*Border radius*/
 const double bdr8 = 8;
+
+/*Sizes*/
+const double s200 = 200;
+const double s40 = 40;
