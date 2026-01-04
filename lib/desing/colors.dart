@@ -1,8 +1,8 @@
 import 'dart:ui';
 
-const Color primaryColor = Color(0xFF8E1F);
-const Color secondaryColor = Color(0x081B31);
-const Color SecondaryVariant = Color(0x081B31);
-const Color backgroundColor = Color(0xF2F2F2);
-const Color SurfaceColor = Color(0xFFFFFF);
+const Color primaryColor = Color(0xFFFF8E1F);
+const Color secondaryColor = Color(0xFF081B31);
+const Color secondaryVariantColor = Color(0x80081B31);
+const Color backgroundColor = Color(0xFFF2F2F2);
+const Color SurfaceColor = Color(0xFFFFFFFF);
 //my colors
