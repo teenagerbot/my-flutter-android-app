@@ -1,7 +1,6 @@
 import 'package:first_flutter/desing/colors.dart';
 import 'package:first_flutter/desing/dimensions.dart';
 import 'package:first_flutter/desing/widgets/accent_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ErrorDialog extends StatelessWidget {
