@@ -1,4 +1,6 @@
+import 'package:first_flutter/desing/dialog/error_dialog.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import '../../desing/widgets/accent_button.dart';
 import '../../pages/vehicle/vehicle_item.dart';
 import '../../desing/dimensions.dart';
@@ -12,7 +14,8 @@ class VehicleList extends StatelessWidget {
     return Stack(
       children: <Widget>[
         _list(context),
-        Align(alignment: Alignment.bottomCenter, child: _updateButton()),
+        Align(alignment: Alignment.bottomCenter, child: _updateButton
+          (context)),
       ],
     );
   }
@@ -36,15 +39,35 @@ class VehicleList extends StatelessWidget {
         return const VehicleItem();
         //Container(height: height64, color: SurfaceColor)
       },
-      padding: EdgeInsets.only(left: pad16, right: pad16, top: pad16, bottom: bottomPadding),
+      padding: EdgeInsets.only(
+        left: pad16,
+        right: pad16,
+        top: pad16,
+        bottom: bottomPadding,
+      ),
     );
   }
 
-  Widget _updateButton() {
+  Widget _updateButton(BuildContext context) {
     /*SafeArea - помогает добавить отступы чтобы не мешало системным кнопкам*/
-    return SafeArea(child: Padding(
-      padding: const EdgeInsets.only(left: pad16, right: pad16),
-      child: AccentButton(title: "Update", onTap: () {}),
-    ));
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.only(left: pad16, right: pad16),
+        child: AccentButton(title: "Update", onTap: () {
+          _showErrorDialog(context);
+        }),
+      ),
+    );
+  }
+
+  void _showErrorDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return ErrorDialog(
+          textError: "Server is unavailable. Please try again later.",
+        );
+      },
+    );
   }
 }
