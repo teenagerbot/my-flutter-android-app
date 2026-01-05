@@ -1,7 +1,9 @@
 import 'package:first_flutter/desing/colors.dart';
 import 'package:first_flutter/desing/dimensions.dart';
+import 'package:first_flutter/desing/styles.dart';
 import 'package:first_flutter/desing/widgets/accent_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widget_previews.dart';
 
 class ErrorDialog extends StatelessWidget {
   final String textError;
@@ -16,16 +18,9 @@ class ErrorDialog extends StatelessWidget {
         padding: const EdgeInsets.all(pad16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,//минимальный размер окна
+          mainAxisSize: MainAxisSize.min, //минимальный размер окна
           children: <Widget>[
-            Text(
-              "Oops...",
-              style: TextStyle(
-                color: secondaryColor,
-                fontSize: fontSize24,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
+            Text("Oops...", style: errorDialogStyle),
             const SizedBox(height: height8),
             Text(
               textError,
@@ -37,10 +32,13 @@ class ErrorDialog extends StatelessWidget {
             ),
             const SizedBox(height: height8),
             Center(
-              child: AccentButton(title: "OK", onTap: () {
-                Navigator.pop(context);//close dialog
-              }),
-            )
+              child: AccentButton(
+                title: "OK",
+                onTap: () {
+                  Navigator.pop(context); //close dialog
+                },
+              ),
+            ),
           ],
         ),
       ),

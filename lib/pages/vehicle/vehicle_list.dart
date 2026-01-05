@@ -1,6 +1,7 @@
 import 'package:first_flutter/desing/dialog/error_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widget_previews.dart';
 import '../../desing/widgets/accent_button.dart';
 import '../../pages/vehicle/vehicle_item.dart';
 import '../../desing/dimensions.dart';
