@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
 
 class VehicleItem extends StatelessWidget {
-  const VehicleItem({super.key});
+  final VoidCallback onTap;
+
+  const VehicleItem({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class VehicleItem extends StatelessWidget {
         ),
         child: InkWell(
           borderRadius: BorderRadius.circular(bdr8),
-          onTap: () {},
+          onTap: onTap,
           child: Padding(
             padding: const EdgeInsets.only(left: pad8, right: pad16),
             child: Row(children: <Widget>[MotorcycleImage, _title(), _state()]),
