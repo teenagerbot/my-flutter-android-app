@@ -3,7 +3,6 @@ import 'package:first_flutter/desing/dimensions.dart';
 import 'package:first_flutter/desing/images.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widget_previews.dart';
 
 class VehicleItem extends StatelessWidget {
   final VoidCallback onTap;
