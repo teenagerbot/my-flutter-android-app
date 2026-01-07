@@ -1,12 +1,21 @@
-import 'package:first_flutter/desing/colors.dart';
 import 'package:first_flutter/desing/utils/size_utils.dart';
+import 'package:first_flutter/pages/driver/driver_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../desing/widgets/accent_button.dart';
 import '../../desing/dimensions.dart';
 
-class DriverList extends StatelessWidget {
+//StatefulWidget для того чтобы создать свою логику виджета, то есть нам
+// нужно его пересоздавать(перерисовывать) с помощью setState
+class DriverList extends StatefulWidget {
   const DriverList({super.key});
+
+  @override
+  State<DriverList> createState() => _DriverListState();
+}
+
+class _DriverListState extends State<DriverList> {
+  int? _selectedDriverIndex; //индекс выбраного драйвера
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +42,12 @@ class DriverList extends StatelessWidget {
         return const SizedBox(height: height8);
       },
       itemBuilder: (BuildContext context, int index) {
-        return Container(height: height64, color: SurfaceColor);
+        final bool isSelected = _selectedDriverIndex == index;
+        return DriverItem(isSelected: isSelected, driverName: "Paul", onTap: () {
+          setState(() {
+            _selectedDriverIndex = index;
+          });
+        });
         //Container(height: height64, color: SurfaceColor)
       },
       padding: EdgeInsets.only(
@@ -50,7 +64,9 @@ class DriverList extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.only(left: pad16, right: pad16),
-        child: AccentButton(title: "Save", onTap: () {}),
+        child: AccentButton(title: "Save", onTap: () {
+
+        }),
       ),
     );
   }

@@ -14,3 +14,8 @@ const TextStyle errorDialogStyle = TextStyle(
   fontSize: fontSize24,
   fontWeight: FontWeight.w600,
 );
+const TextStyle body2TextStyle = TextStyle(
+  color: secondaryColor,
+  fontSize: fontSize14,
+  fontWeight: FontWeight.w600,
+);

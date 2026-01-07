@@ -8,6 +8,7 @@ const double fontSize24 = 24;
 /*Heights*/
 const double height8 = 8;
 const double height64 = 64;
+const double height16 = 16;
 
 /*Paddings*/
 const double pad16 = 16;
